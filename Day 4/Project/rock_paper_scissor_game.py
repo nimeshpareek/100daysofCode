@@ -40,7 +40,8 @@ elif user_input == '3':
     print("Your Choice is: SCISSOR")
     print(scissor)
 else:
-    print("Wrong input :")
+    print("*******Wrong input**")
+    exit()
 
 
 random_value = random.randint(1, 3)
@@ -62,14 +63,14 @@ if random_value == int_user_input:
 elif int_user_input == 1 and random_value == 2:
     print("*****YOU LOSE*****")
 elif int_user_input == 1 and random_value == 3:
-    print("YOU WON!!!")
+    print("*****YOU WON!!!*****")
 elif int_user_input == 2 and random_value == 1:
-    print("YOU WON")
+    print("*****YOU WON!!!*****")
 elif int_user_input == 2 and random_value == 3:
-    print("YOUR LOSE")
+    print("*****YOUR LOSE*****")
 elif int_user_input == 3 and random_value == 1:
-    print("YOUR LOSE")
+    print("*****YOUR LOSE*****")
 elif int_user_input == 3 and random_value == 2:
-    print("YOU LOSE")
+    print("*****YOU LOSE*****")
 else:
     print("this code is not working")
