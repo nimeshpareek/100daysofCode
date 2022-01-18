@@ -1,5 +1,3 @@
-import random
-
 hangman = ['''
   +---+
   |   |
@@ -51,43 +49,44 @@ hangman = ['''
       |
 =========''']
 
-print(hangman[0])
-word_list = ["nimesh", "naresh", "kanishk"]
-random_word = random.choice(word_list)
-#print(random_word)
-
-list_name = []
-for x in random_word:
-    list_name.append("_")
-
-#print(list_name)
-#user_input = input("Enter a letter to be guessed : ")
-# for i in random_word:
-#     if user_input == i:
-#         print("Here i is: " + i)
-#         for i in list_name:
-#             i = user_input
-#             print("entered in if condition")
+word = "qwertyq"
+lives = 0
 count = 0
-life_count == 0
-while count < len(random_word) or life_count == 6:
-    user_input = input("GUESS LETTER-- : ")
-    for i in range(len(random_word)):
-        if user_input == random_word[i]:
-            count = count + 1
-            for guess in list_name:
-                list_name[i] = user_input
-                print(list_name)
-                print(hangman[life_count])
-                break
-        else:
-            life_count = life_count + 1
-            print(hangman[life_count])
+word_length = len(word)
+
+display = []
+for i in range(word_length):
+    display += "_"
+
+# user_input = input("Input: ")
+# print(type(user_input))
+# print(display)
+# for x in range(word_length):
+#     if word[x] == user_input:
+#         print("Yes")
+end_of_game = False
+while not end_of_game:
+    user_input = input("guess letter: ")
+    for position in range(word_length):
+        if word[position] == user_input:
+            display[position] = word[position]
+
+    print(display)
+    print(hangman[lives])
+    if user_input not in word:
+        lives += 1
+        print(lives)
+    if lives == 7:
+        end_of_game = True
+        print("***** YOU LOSE ****")
+
+    if "_" not in display:
+        end_of_game = True
+        print("***** YOU WIN *****")
 
 
-print(hangman[life_count])
 
 
-#print(list_name)
+
 
 
