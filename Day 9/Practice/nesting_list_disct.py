@@ -1,0 +1,2 @@
+# nesting
+capitals = {"Country": "France", "" }
